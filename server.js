@@ -5,7 +5,12 @@ require("dotenv").config();
 
 const app = express();
 
-app.options("/*", cors());
+app.use(cors({
+  origin: "https://portfolio-shs2.vercel.app",
+  methods: ["GET", "POST"]
+}));
+
+app.use(express.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
