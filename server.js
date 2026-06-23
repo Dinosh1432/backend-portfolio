@@ -7,7 +7,8 @@ const app = express();
 
 app.use(cors({
   origin: "https://portfolio-shs2.vercel.app",
-  methods: ["GET", "POST"]
+  methods: ["POST"],
+  allowedHeaders: ["Content-Type"]
 }));
 
 app.use(express.json());
